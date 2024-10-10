@@ -1,0 +1,44 @@
+{
+  "workbench.colorCustomizations": {
+    "titleBar.activeBackground": "#567b76",
+    "titleBar.inactiveBackground": "#567b76",
+    "titleBar.activeForeground": "#fff",
+    "titleBar.inactiveForeground": "#fff",
+    "activityBarBadge.background": "#567b76",
+    "activityBarBadge.foreground": "#fff",
+    "tab.activeBackground": "#666"
+  },
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  // stylelint & eslint
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "never",
+    "source.fixAll.markuplint": "explicit",
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit"
+  },
+  "css.validate": false,
+  "scss.validate": false,
+  // htmllint
+  "markuplint.enable": true,
+  "markuplint.targetLanguages": ["html"],
+  "markuplint.hover.accessibility.enable": true,
+  "stylelint.validate": ["css", "scss", "vue"],
+  "eslint.validate": ["javascript", "typescript", "vue"],
+  // prettier
+  "prettier.singleQuote": true,
+  "prettier.printWidth": 120,
+  "extensions.ignoreRecommendations": false,
+  "[markdown]": {
+    "editor.formatOnSave": false
+  },
+  "gutterpreview.paths": {
+    "/assets/images/": "${workspaceRoot}/dist/assets/images/"
+  },
+  "gutterpreview.sourceFolder": "dist",
+  "files.associations": {
+    "*.svg": "html"
+  }
+}
