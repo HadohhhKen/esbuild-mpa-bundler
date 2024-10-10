@@ -1,0 +1,28 @@
+@use './breakpoints' as st;
+
+@function get-breakpoint($bp) {
+  $mq-breakpoint: map-get(st.$breakpoints, $bp);
+  $breakpoint: if($mq-breakpoint, $mq-breakpoint, $bp);
+
+  @return $breakpoint;
+}
+
+@mixin mq($from: null, $until: null) {
+  $condition: '(min-width: 0)';
+
+  @if $from and $until {
+    $from: get-breakpoint($from);
+    $until: get-breakpoint($until) - 0.02px;
+    $condition: '(min-width: #{$from}) and (max-width: #{$until})';
+  } @else if $from {
+    $from: get-breakpoint($from);
+    $condition: '(min-width: #{$from})';
+  } @else if $until {
+    $until: get-breakpoint($until) - 0.02px;
+    $condition: '(max-width: #{$until})';
+  }
+
+  @media #{$condition} {
+    @content;
+  }
+}

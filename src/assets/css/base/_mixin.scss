@@ -1,0 +1,18 @@
+@use './media-queries' as mq;
+
+@mixin absolute-center($top: 0, $bottom: 0) {
+  position: absolute;
+  top: $top;
+  right: 0;
+  bottom: $bottom;
+  left: 0;
+  margin: auto;
+}
+
+@mixin absolute-full {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

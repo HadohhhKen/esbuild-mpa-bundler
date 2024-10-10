@@ -1,0 +1,19 @@
+@function vw($size) {
+  @return calc(($size / 375) * 100) + vw;
+}
+
+@function tb-vw($size) {
+  @return calc(($size / 768) * 100) + vw;
+}
+
+@function ltb-vw($size) {
+  @return calc(($size / 1024) * 100) + vw;
+}
+
+@function dt-vw($size) {
+  @return calc(($size / 1280) * 100) + vw;
+}
+
+@function ldt-vw($size) {
+  @return calc(($size / 1440) * 100) + vw;
+}
