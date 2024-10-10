@@ -1,0 +1,95 @@
+{
+  "name": "esbuild-mpa-bundler",
+  "version": "1.0.0",
+  "description": "",
+  "engines": {
+    "yarn": "Don't use yarn add instead use npm install"
+  },
+  "scripts": {
+    "dev": "rimraf dist && node build-process/index.mjs development",
+    "build": "rimraf dist && vue-tsc && node build-process/index.mjs",
+    "preview": "node build-process/preview.mjs",
+    "prepare": "husky",
+    "diff": "node --experimental-modules diff.mjs"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/types": "7.25.6",
+    "@eslint/js": "9.9.1",
+    "@markuplint/ejs-parser": "4.6.6",
+    "@markuplint/vue-parser": "4.6.6",
+    "@markuplint/vue-spec": "4.5.6",
+    "@types/express": "4.17.21",
+    "@types/glob": "8.1.0",
+    "@types/lodash": "4.17.7",
+    "@types/node": "22.5.3",
+    "@types/skatejs": "5.0.8",
+    "@vue/eslint-config-prettier": "9.0.0",
+    "@vue/tsconfig": "0.5.1",
+    "autoprefixer": "10.4.20",
+    "browser-sync": "3.0.2",
+    "chokidar": "3.6.0",
+    "esbuild": "0.23.1",
+    "esbuild-plugin-vue3": "0.4.2",
+    "eslint": "9.9.1",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-plugin-vue": "9.28.0",
+    "express": "4.19.2",
+    "fs-extra": "11.2.0",
+    "glob": "11.0.0",
+    "globals": "15.9.0",
+    "http-proxy-middleware": "3.0.2",
+    "https": "1.0.0",
+    "husky": "9.1.5",
+    "lint-staged": "15.2.10",
+    "markuplint": "4.9.3",
+    "postcss": "8.4.45",
+    "postcss-combine-media-query": "1.0.1",
+    "postcss-html": "1.7.0",
+    "postcss-scss": "4.0.9",
+    "prettier": "3.3.3",
+    "rimraf": "6.0.1",
+    "sass": "1.78.0",
+    "sharp": "0.33.5",
+    "stylelint": "16.9.0",
+    "stylelint-config-recess-order": "5.1.0",
+    "stylelint-config-recommended-scss": "14.1.0",
+    "stylelint-config-recommended-vue": "1.5.0",
+    "typescript": "5.5.4",
+    "typescript-eslint": "8.4.0",
+    "vue-tsc": "2.1.4",
+    "vuetify": "3.7.1"
+  },
+  "dependencies": {
+    "@types/jquery": "3.5.30",
+    "@uit/glitch-image": "0.0.10",
+    "axios": "1.7.7",
+    "composable": "1.0.3",
+    "gsap": "3.12.5",
+    "jquery": "3.7.1",
+    "lodash": "4.17.21",
+    "swiper": "11.1.12",
+    "vue": "3.5.0",
+    "vue-composable": "1.0.0-beta.24",
+    "vue-inline-svg": "3.1.3"
+  },
+  "lint-staged": {
+    "public/**/*.html": [
+      "markuplint --fix"
+    ],
+    "src/**/*.scss": [
+      "prettier --write",
+      "stylelint --fix"
+    ],
+    "src/**/*.ts": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "src/**/*.vue": [
+      "prettier --write",
+      "eslint --fix",
+      "stylelint --fix"
+    ]
+  }
+}
